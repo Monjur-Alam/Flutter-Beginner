@@ -17,19 +17,14 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[500],
       ),
       body: Center(
-        child: Text(
-          'This is Body',
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.grey,
-            fontFamily: 'IndieFlower',
-          ),),
+        child: Image.asset('assets/a.png'),
+          // image: NetworkImage('https://image.winudf.com/v2/image/dHcudXJsLm9tZWdhLnNjcmVlbnNpemVfc2NyZWVuc2hvdHNfMV9lNTlhYWI4Zg/screen-1.jpg?fakeurl=1&type=.jpg'),
+          // image: AssetImage('assets/android.png'),
+        // ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Text('Ok'),
+        child: Text('Click'),
         backgroundColor: Colors.red[500],
       ),
     );
