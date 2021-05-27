@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() => runApp(MaterialApp(home: Home()));
 
@@ -9,10 +10,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<String> quotes = [
-    'Dlufg af algf afah f',
-    'Akd afj ajfk jajfb kajf ',
-    'Ejsfh adh kjadfj bajf '
+  List<Quote> quotes = [
+    Quote(text: 'One sdjf d', author: 'Dlufg af algf afah f'),
+    Quote(text: 'One sdjf d', author: 'Dlufg af algf afah f'),
+    Quote(text: 'One sdjf d', author: 'Dlufg af algf afah f'),
+    Quote(text: 'One sdjf d', author: 'Dlufg af algf afah f')
   ];
   @override
   Widget build(BuildContext context) {
@@ -25,11 +27,8 @@ class _HomeState extends State<Home> {
       body: Padding(
         padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: quotes.map((quote) {
-            return Text(quote);
-          }).toList(),
-        ),
+          children: quotes.map((quote) => Text('${quote.text} - ${quote.author}')).toList()
+        )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
