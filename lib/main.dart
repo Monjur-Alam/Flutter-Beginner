@@ -9,8 +9,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String name = 'Alam';
-  int age = 0;
+  List<String> quotes = [
+    'Dlufg af algf afah f',
+    'Akd afj ajfk jajfb kajf ',
+    'Ejsfh adh kjadfj bajf '
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,97 +26,13 @@ class _HomeState extends State<Home> {
         padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/profile.jpeg'),
-                radius: 40.0,
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Divider(
-              height: 60.0,
-              color: Colors.red,
-            ),
-            Text(
-              'Name',
-              style: TextStyle(
-                color: Colors.red,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-              '$name',
-              style: TextStyle(
-                  color: Colors.red,
-                  letterSpacing: 2.0,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            Text(
-              'Age',
-              style: TextStyle(
-                color: Colors.red,
-                letterSpacing: 2.0,
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-              '$age years',
-              style: TextStyle(
-                  color: Colors.red,
-                  letterSpacing: 2.0,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.email_outlined,
-                  color: Colors.red,
-                ),
-                Text(
-                  ' Email',
-                  style: TextStyle(
-                    color: Colors.red,
-                    letterSpacing: 2.0,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-              'gai@gmail.com',
-              style: TextStyle(
-                  color: Colors.red,
-                  letterSpacing: 2.0,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold),
-            )
-          ],
+          children: quotes.map((quote) {
+            return Text(quote);
+          }).toList(),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            age += 1;
-          });
-        },
+        onPressed: () {},
         child: Text('Click'),
         backgroundColor: Colors.red[500],
       ),
