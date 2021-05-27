@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(home: Home()));
@@ -11,19 +12,33 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[500],
       ),
-      body: Padding(
-        padding: EdgeInsets.all(100.0), // margin not working here
-        child: Text('Container & Padding'),
-      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.end,
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        // mainAxisAlignment: MainAxisAlignment.start,
 
-      // Container(
-      //   margin: EdgeInsets.all(30.0),
-      //   padding: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 20.0),
-        // padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30),
-        // padding: EdgeInsets.all(50.0),
-        // color: Colors.grey[400],
-        // child: Text('Container & Padding'),
-      // ),
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.end,
+        // crossAxisAlignment: CrossAxisAlignment.baseline,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+
+        children: <Widget>[
+          Text('Text'),
+          FlatButton(onPressed: () {},
+              color: Colors.red,
+              child: Text('FlatButton'),
+          ),
+          Container(
+            color: Colors.cyan,
+            padding: EdgeInsets.all(30.0),
+            child: Text('Container'),
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Text('Click'),
