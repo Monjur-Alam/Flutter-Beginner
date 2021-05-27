@@ -24,18 +24,33 @@ class Home extends StatelessWidget {
         // crossAxisAlignment: CrossAxisAlignment.start,
         // crossAxisAlignment: CrossAxisAlignment.end,
         // crossAxisAlignment: CrossAxisAlignment.baseline,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.center,
 
         children: <Widget>[
-          Text('Text'),
-          FlatButton(onPressed: () {},
-              color: Colors.red,
-              child: Text('FlatButton'),
+          Expanded(flex: 2, child: Image.asset('assets/android.png')),
+          Expanded(
+            flex: 3,
+            child: Container(
+              color: Colors.cyan,
+              padding: EdgeInsets.all(30.0),
+              child: Text('Container'),
+            ),
           ),
-          Container(
-            color: Colors.cyan,
-            padding: EdgeInsets.all(30.0),
-            child: Text('Container'),
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.yellow,
+              padding: EdgeInsets.all(30.0),
+              child: Text('Container'),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.red,
+              padding: EdgeInsets.all(30.0),
+              child: Text('Container'),
+            ),
           ),
         ],
       ),
