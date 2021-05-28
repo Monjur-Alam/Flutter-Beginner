@@ -11,12 +11,12 @@ class _ChooseLocationState extends State<ChooseLocation> {
 
   @override
   void initState() {
-    print('initState called');
     super.initState();
+    getData();
+    print('initState called');
   }
   @override
   Widget build(BuildContext context) {
-    print('Build called');
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
@@ -25,7 +25,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         centerTitle: true,
         elevation: 0,
       ),
-      body: MaterialButton(
+      body: FlatButton(
         onPressed: () {
           setState(() {
             counter += 1;
@@ -34,5 +34,17 @@ class _ChooseLocationState extends State<ChooseLocation> {
         child: Text('Counter is $counter'),
       )
     );
+  }
+
+  void getData() async {
+    String firstName = await Future.delayed(Duration(seconds: 3), () {
+      return 'Hello';
+    });
+
+    String lastName = await Future.delayed(Duration(seconds: 2), () {
+      return 'World';
+    });
+
+    print('$firstName $lastName');
   }
 }
