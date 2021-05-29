@@ -8,52 +8,18 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  Map mapData = {};
+  Map data = {};
 
   @override
   Widget build(BuildContext context) {
 
-    mapData = {"dataKey":ModalRoute.of(context)!.settings.arguments};
-    print(mapData);
+    // final  Map<String, Object> rcvdData = ModalRoute.of(context).settings.arguments;
+    // print("rcvd fdata ${rcvdData['name']}");
+    // print("rcvd fdata ${rcvdData}");
 
-    return Scaffold(
-      body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(0.0, 120.0, 0.0, 0.0),
-            child: Column(
-              children: [
-                TextButton.icon(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/location');
-                    },
-                    icon: Icon(Icons.edit_location),
-                  label: Text('Edit Location'),
-                ),
-                SizedBox(height: 20.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      mapData['location'],
-                      style: TextStyle(
-                        fontSize: 28.0,
-                        letterSpacing: 2.0
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20.0),
-                Text(
-                  mapData['time'],
-                  style: TextStyle(
-                      fontSize: 48.0,
-                      letterSpacing: 2.0
-                  ),
-                ),
-              ],
-            ),
-          )
-      ),
-    );
+    return Scaffold(appBar: AppBar(title: Text("Second")),
+      body: Container(child: Column(children: <Widget>[
+        Text("Second"),
+      ],),),);
   }
 }

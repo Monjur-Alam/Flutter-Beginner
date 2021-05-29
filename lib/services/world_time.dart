@@ -3,14 +3,13 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 
 class WorldTime {
-  late String location; //location name for the UI
-  late String time; // the time in the location
-  late String flag; // url to an asset flag icon
+  late String title; // the time in the location
+  late String desc; // url to an asset flag icon
   late String url; // location url for the api end-point
 
-  WorldTime({required this.location, required this.flag, required this.url});
+  WorldTime({required this.url});
 
-  Future<void> getTime() async{
+  Future<void> getData() async{
     try {
       Response response = await get(Uri.parse('https://worldtimeapi.org/api/timezone/$url'));
       Map data = jsonDecode(response.body);
@@ -21,11 +20,11 @@ class WorldTime {
 
       DateTime now = DateTime.parse(dateTime);
       now = now.add(Duration(hours: int.parse(offset)));
-      time = DateFormat.jm().format(now);
+      title = DateFormat.jm().format(now);
     }
     catch (e){
       print('Caught error: $e');
-      time = 'Could not get the time';
+      title = 'Could not get the time';
     }
   }
 }

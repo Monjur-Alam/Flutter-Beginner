@@ -1,36 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/services/world_time.dart';
+import 'package:http/http.dart';
+import 'dart:convert';
 
 class Loading extends StatefulWidget {
-
   @override
   _LoadingState createState() => _LoadingState();
 }
 
 class _LoadingState extends State<Loading> {
-  Future<void> setWorldTime() async {
-    WorldTime worldTime = WorldTime(location: 'Berlin', flag: 'android.png', url: 'Europe/Berlin');
-    await worldTime.getTime();
-    Navigator.pushReplacementNamed(context, '/home', arguments: {
-      'location: ', worldTime.location,
-      'flag: ', worldTime.flag,
-      'time: ', worldTime.time,
-    });
+  Future<void> getData() async {
+    try {
+      Response response =
+          await get(Uri.parse('https://jsonplaceholder.typicode.com/posts/2'));
+      Map data = jsonDecode(response.body);
+      print(data['title']);
+      // Navigator.pushNamed(context, "second",
+      //     arguments: {"name": "Bijendra", "rollNo": 65210});
+    } catch (e) {
+      print('Caught error: $e');
+    }
   }
 
   @override
   void initState() {
     super.initState();
-    setWorldTime();
+    getData();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(50.0),
-        child: Text('Loading'),
-      ),
+      backgroundColor: Colors.blue[900],
+      body: Center(
+          // child: SpinKitRotatingCircle(
+          //   color: Colors.white,
+          //   size: 50.0,
+          // )
+          ),
     );
   }
 }
