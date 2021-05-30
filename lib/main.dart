@@ -1,14 +1,62 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/pages/choose_location.dart';
-import 'package:flutter_app/pages/loading.dart';
-import 'package:flutter_app/pages/home.dart';
 
-void main() => runApp(MaterialApp(
-  initialRoute: '/',
-      routes: {
-        '/': (context) => Loading(),
-        '/home': (context) => Home(),
-        '/location': (context) => ChooseLocation(),
-      },
-    ));
+void main() => runApp(MaterialApp(home: Home()));
+
+class Home extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SafeArea(
+          child: Scaffold(
+            body: ListView(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Container(
+                      height: 200,
+                      width: 100,
+                      color: Colors.red,
+                    ),
+                    SizedBox(height: 20),
+
+                    Container(
+                      height: 200,
+                      width: 100,
+                      color: Colors.red,
+                    ),
+                    SizedBox(height: 20),
+
+                    Container(
+                      height: 200,
+                      width: 100,
+                      color: Colors.red,
+                    ),
+                    SizedBox(height: 20),
+
+                    Container(
+                      height: 200,
+                      width: 100,
+                      color: Colors.red,
+                    ),
+                    SizedBox(height: 20),
+
+                    Container(
+                      height: 200,
+                      width: 100,
+                      color: Colors.red,
+                    ),
+                    SizedBox(width: 20),
+
+                  ],
+                ),
+              ],
+            ),
+          )
+      )
+    );
+  }
+}
